@@ -49,6 +49,7 @@ export type AdvancedRealTimeChartProps = {
   popup_height?: string;
   watchlist?: string[];
   studies?: Studies[];
+  studies_overrides?: Record<string, string | number>
   disabled_features?: WidgetFeatures[];
   enabled_features?: WidgetFeatures[];
 
@@ -85,6 +86,7 @@ const AdvancedRealTimeChart: React.FC<AdvancedRealTimeChartProps> = ({
   popup_height = "400",
   watchlist = undefined,
   studies = undefined,
+  studies_overrides = undefined,
   disabled_features = undefined,
   enabled_features = undefined,
   container_id = `tradingview_${createId(5)}`,
@@ -124,6 +126,7 @@ const AdvancedRealTimeChart: React.FC<AdvancedRealTimeChartProps> = ({
           }),
           watchlist,
           studies,
+          studies_overrides,
           disabled_features,
           enabled_features,
           container_id,
